@@ -1,0 +1,16 @@
+body {
+  background-image: radial-gradient(circle at top left, #fff, #6ccbe9);
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  color: red;
+}
+
+.monster {
+  height: 400px;
+  width: 400px;
+  background: url('../img/seledin.png');
+  background-size: cover;
+}
