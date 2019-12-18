@@ -1,6 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -23,7 +24,13 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|svg|gif|jpeg)$/,
-        use: 'file-loader'
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img'
+          }
+        }
       },
       {
         test: /\.js$/,
@@ -42,7 +49,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      title: 'Monsterquest'
+      title: 'Monsterquest',
+      favicon: 'favicon.png'
     })
   ]
 };

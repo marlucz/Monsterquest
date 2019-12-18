@@ -57,7 +57,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      title: 'Monsterquest'
+      title: 'Monsterquest',
+      favicon: 'favicon.png'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css'
