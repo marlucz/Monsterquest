@@ -1,16 +1,172 @@
-body {
-  background-image: radial-gradient(circle at top left, #fff, #6ccbe9);
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Lilita One', sans-serif;
+  font-size: 62.5%;
+}
+
+.app {
+  position: relative;
   overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  background-image: radial-gradient(
+    circle at top right,
+    $color-light,
+    $color-gradient
+  );
 }
 
-h1 {
-  color: red;
+.hero {
+  &__header {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+
+    @media (min-width: 1024px) {
+      height: 50vh;
+    }
+
+    @media (min-width: 1400px) {
+      height: 45vh;
+    }
+
+    * {
+      animation: slideInHero 1s ease both;
+    }
+
+    button {
+      animation-delay: 2.5s;
+    }
+  }
+
+  &__heading {
+    font-family: 'Luckiest Guy';
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    color: $color-primary;
+    margin: 5rem 0 2rem 0;
+    text-shadow: 0 1px 0 $color-dark, 0 2px 0 $color-dark, 0 3px 0 $color-dark,
+      0 4px 0 $color-dark, 0 5px 0 $color-dark, 0 6px 0 transparent,
+      0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent,
+      0 10px 10px rgba($color-dark, 0.4);
+    animation-delay: 1.5s;
+
+    @media (min-width: 1024px) {
+      font-size: 4rem;
+      margin: 3rem 0;
+      letter-spacing: 7px;
+    }
+
+    @media (min-width: 1400px) {
+      font-size: 4.5rem;
+      letter-spacing: 10px;
+    }
+    @media (min-width: 1600px) {
+      font-size: 5rem;
+      letter-spacing: 15px;
+    }
+  }
+
+  &__subtext {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding: 2rem;
+    color: $color-secondary;
+    text-align: center;
+    animation-delay: 2s;
+
+    @media (min-width: 1024px) {
+      font-size: 2rem;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__image {
+    height: 60vw;
+    width: 60vw;
+    position: absolute;
+    transform: translate(-150%, 150%) rotateZ(45deg);
+    animation: slideInMonster 2s cubic-bezier(0.79, 0.27, 0.86, 1.44) forwards;
+
+    @media (min-width: 1024px) {
+      height: 50vw;
+      width: 50vw;
+    }
+
+    @media (min-width: 1600px) {
+      height: 40vw;
+      width: 40vw;
+    }
+
+    &--seledin {
+      left: 30%;
+      bottom: 0;
+      z-index: 2;
+      animation-delay: 1s;
+      @media (min-width: 1024px) {
+        left: 25%;
+        bottom: -5%;
+      }
+    }
+    &--pinky {
+      z-index: 4;
+      bottom: -5%;
+      left: -5%;
+      animation-delay: 0.5s;
+    }
+    &--yellow {
+      z-index: 3;
+      bottom: 10%;
+      left: -5%;
+      @media (min-width: 768px) {
+        bottom: 15%;
+      }
+      @media (min-width: 1024px) {
+        bottom: 25%;
+      }
+      @media (min-width: 1600px) {
+        bottom: 35%;
+      }
+    }
+  }
 }
 
-.monster {
-  height: 400px;
-  width: 400px;
-  background: url('../img/seledin.png');
-  background-size: cover;
+@keyframes slideInMonster {
+  100% {
+    transform: translate(-30%, 30%) rotateZ(45deg);
+  }
+}
+
+@keyframes slideInHero {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
