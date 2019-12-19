@@ -9,6 +9,7 @@
     "class-methods-use-this": "off",
     "prefer-object-spread": "warn",
     "prefer-destructuring": "warn",
-    "no-undef": "off"
+    "no-undef": "off",
+    "no-new": "off"
   }
 }
