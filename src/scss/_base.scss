@@ -46,7 +46,7 @@ html {
     }
 
     * {
-      animation: slideInHero 1s ease both;
+      animation: slideInHero 1s cubic-bezier(0.79, 0.27, 0.86, 1.44) both;
     }
 
     button {
@@ -149,9 +149,30 @@ html {
   }
 }
 
+.faded {
+  &--monsters {
+    animation: slideOutMonster 2s cubic-bezier(0.15, -0.41, 0.17, 0.88) forwards;
+  }
+
+  &--hero {
+    animation: slideOutHero 2s cubic-bezier(0.15, -0.41, 0.17, 0.88) forwards;
+  }
+}
+
 @keyframes slideInMonster {
   100% {
     transform: translate(-30%, 30%) rotateZ(45deg);
+  }
+}
+
+@keyframes slideOutMonster {
+  0% {
+    transform: translate(-30%, 30%) rotateZ(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-150%, 150%) rotateZ(45deg);
+    opacity: 0;
   }
 }
 
@@ -161,12 +182,20 @@ html {
     transform: translateX(10rem);
   }
 
-  80% {
-    transform: translateX(-2rem);
-  }
-
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slideOutHero {
+  0% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(10rem);
   }
 }
