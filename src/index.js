@@ -1,6 +1,8 @@
-import './scss/style.scss';
-import App from './components/App';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App/App';
+import './base.scss';
 
-window.addEventListener('DOMContentLoaded', function() {
-  new App();
+document.addEventListener('DOMContentLoaded', function() {
+  ReactDOM.render(<App />, document.getElementById('root'));
 });
