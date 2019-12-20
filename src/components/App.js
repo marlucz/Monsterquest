@@ -30,6 +30,8 @@ export default class App {
       image.classList.add('faded--monsters');
     });
     elements.heroHeader.classList.add('faded--hero');
-    elements.heroHeader.addEventListener('animationend', e => console.log(e));
+    elements.heroHeader.addEventListener('animationend', () => {
+      this.state.monstersList.renderMonsterDeck();
+    });
   };
 }
