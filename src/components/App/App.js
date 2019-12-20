@@ -1,9 +1,10 @@
 import React from 'react';
+import './App.scss';
+import HeroWrapper from '../HeroWrapper/HeroWrapper';
 
 const App = () => (
   <div className="app">
-    <h1>Hello World</h1>
-    <h2>From the react side</h2>
+    <HeroWrapper />
   </div>
 );
 
