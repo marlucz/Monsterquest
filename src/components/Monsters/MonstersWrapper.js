@@ -6,7 +6,7 @@ import API from '../API';
 class MonstersWrapper extends React.Component {
   state = {
     monsterList: [],
-    selectedMonsterSlug: ''
+    selectedMonster: {}
   };
 
   componentDidMount = () => {
@@ -15,12 +15,19 @@ class MonstersWrapper extends React.Component {
     });
   };
 
+  getMonster = monsterSlug => {
+    API.fetchMonster(monsterSlug).then(res => {
+      this.setState({ selectedMonster: res.data });
+      console.log(this.state.selectedMonster);
+    });
+  };
+
   render() {
-    const { monsterList } = this.state;
+    const { monsterList, selectedMonster } = this.state;
     return (
-      <section className="monsters">
-        <MonsterCard />
-        <MonsterList monsters={monsterList} />
+      <section className="monsters-wrapper">
+        <MonsterCard monster={selectedMonster} />
+        <MonsterList monsters={monsterList} fetchMonster={this.getMonster} />
       </section>
     );
   }

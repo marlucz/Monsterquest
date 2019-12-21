@@ -1,11 +1,18 @@
 import React from 'react';
 
-const MonsterList = ({ monsters }) => (
+const MonsterList = ({ fetchMonster, monsters }) => (
   <>
     {monsters.length ? (
       <ul className="monsters__list">
         {monsters.map(monster => (
-          <li key={monster.slug}>{monster.name}</li>
+          <li
+            key={monster.slug}
+            className="monsters__item"
+            onClick={() => fetchMonster(monster.slug)}
+          >
+            <img src={monster.images.thumb} alt={monster.name} />
+            <h2 className="monsters__name">{monster.name}</h2>
+          </li>
         ))}
       </ul>
     ) : (
