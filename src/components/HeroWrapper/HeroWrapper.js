@@ -1,8 +1,9 @@
 import React from 'react';
-import { images } from '../../data/imagesData';
+import PropTypes from 'prop-types';
+import HeroImage from './HeroImage/HeroImage';
 import './HeroWrapper.scss';
 
-const HeroWrapper = () => (
+const HeroWrapper = ({ clickBtn, images: { seledin, pinky, yellow } }) => (
   <section className="hero">
     <header className="hero__header">
       <h1 className="hero__heading">Monsterquest</h1>
@@ -12,26 +13,19 @@ const HeroWrapper = () => (
         <span>To catch them all is my real test,</span>
         <span>To handle is my cause...</span>
       </p>
-      <button id="fetchBtn" className="btn btn--bottom">
+      <button onClick={clickBtn} className="btn btn--bottom">
         Gotta fetch 'em all!
       </button>
     </header>
-    <img
-      className="hero__image hero__image--seledin"
-      src={images.seledin}
-      alt="seledin monster popping up from the corner of the screen"
-    />
-    <img
-      className="hero__image hero__image--pinky"
-      src={images.pinky}
-      alt="pinky monster popping up from the corner of the screen"
-    />
-    <img
-      className="hero__image hero__image--yellow"
-      src={images.yellow}
-      alt="yellow monster popping up from the corner of the screen"
-    />
+    <HeroImage color="seledin" src={seledin} />
+    <HeroImage color="pinky" src={pinky} />
+    <HeroImage color="yellow" src={yellow} />
   </section>
 );
+
+HeroWrapper.propTypes = {
+  clickBtn: PropTypes.func.isRequired,
+  images: PropTypes.objectOf(PropTypes.string).isRequired
+};
 
 export default HeroWrapper;

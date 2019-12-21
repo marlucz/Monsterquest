@@ -63,6 +63,7 @@
     letter-spacing: 4px;
     color: $color-primary;
     margin: 5rem 0 2rem 0;
+    z-index: 10;
     text-shadow: 0 1px 0 $color-dark, 0 2px 0 $color-dark, 0 3px 0 $color-dark,
       0 4px 0 $color-dark, 0 5px 0 $color-dark, 0 6px 0 transparent,
       0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent,
@@ -91,6 +92,7 @@
     padding: 2rem;
     color: $color-secondary;
     text-align: center;
+    z-index: 10;
     animation-delay: 2s;
 
     @media (min-width: 1024px) {
@@ -102,80 +104,15 @@
     }
   }
 
-  &__image {
-    height: 60vw;
-    width: 60vw;
-    position: absolute;
-    transform: translate(-150%, 150%) rotateZ(45deg);
-    animation: slideInMonster 2s cubic-bezier(0.79, 0.27, 0.86, 1.44) forwards;
-
-    @media (min-width: 1024px) {
-      height: 50vw;
-      width: 50vw;
+  .faded {
+    &--monsters {
+      animation: slideOutMonster 2s cubic-bezier(0.15, -0.41, 0.17, 0.88)
+        forwards;
     }
 
-    @media (min-width: 1600px) {
-      height: 40vw;
-      width: 40vw;
+    &--hero {
+      animation: slideOutHero 2s cubic-bezier(0.15, -0.41, 0.17, 0.88) forwards;
     }
-
-    &--seledin {
-      left: 30%;
-      bottom: 0;
-      z-index: 2;
-      animation-delay: 1s;
-      @media (min-width: 1024px) {
-        left: 25%;
-        bottom: -5%;
-      }
-    }
-    &--pinky {
-      z-index: 4;
-      bottom: -5%;
-      left: -5%;
-      animation-delay: 0.5s;
-    }
-    &--yellow {
-      z-index: 3;
-      bottom: 10%;
-      left: -5%;
-      @media (min-width: 768px) {
-        bottom: 15%;
-      }
-      @media (min-width: 1024px) {
-        bottom: 25%;
-      }
-      @media (min-width: 1600px) {
-        bottom: 35%;
-      }
-    }
-  }
-}
-
-.faded {
-  &--monsters {
-    animation: slideOutMonster 2s cubic-bezier(0.15, -0.41, 0.17, 0.88) forwards;
-  }
-
-  &--hero {
-    animation: slideOutHero 2s cubic-bezier(0.15, -0.41, 0.17, 0.88) forwards;
-  }
-}
-
-@keyframes slideInMonster {
-  100% {
-    transform: translate(-30%, 30%) rotateZ(45deg);
-  }
-}
-
-@keyframes slideOutMonster {
-  0% {
-    transform: translate(-30%, 30%) rotateZ(45deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-150%, 150%) rotateZ(45deg);
-    opacity: 0;
   }
 }
 

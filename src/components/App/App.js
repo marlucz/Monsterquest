@@ -1,11 +1,26 @@
 import React from 'react';
-import './App.scss';
 import HeroWrapper from '../HeroWrapper/HeroWrapper';
+import { images } from '../../data/heroImages';
+import './App.scss';
 
-const App = () => (
-  <div className="app">
-    <HeroWrapper />
-  </div>
-);
+class App extends React.Component {
+  state = {
+    isHeroVisible: true
+  };
+
+  handleClickBtn = () => {
+    this.setState({ isHeroVisible: false });
+  };
+
+  render() {
+    return (
+      <div className="app">
+        {this.state.isHeroVisible && (
+          <HeroWrapper images={images} clickBtn={this.handleClickBtn} />
+        )}
+      </div>
+    );
+  }
+}
 
 export default App;
