@@ -103,17 +103,10 @@
       display: block;
     }
   }
+}
 
-  .faded {
-    &--monsters {
-      animation: slideOutMonster 2s cubic-bezier(0.15, -0.41, 0.17, 0.88)
-        forwards;
-    }
-
-    &--hero {
-      animation: slideOutHero 2s cubic-bezier(0.15, -0.41, 0.17, 0.88) forwards;
-    }
-  }
+.faded-exit {
+  animation: fadeOut 2s cubic-bezier(0.15, -0.41, 0.17, 0.88) forwards;
 }
 
 @keyframes slideInHero {
@@ -128,14 +121,12 @@
   }
 }
 
-@keyframes slideOutHero {
+@keyframes fadeOut {
   0% {
     opacity: 1;
-    transform: translateX(0rem);
   }
 
   100% {
     opacity: 0;
-    transform: translateX(10rem);
   }
 }
