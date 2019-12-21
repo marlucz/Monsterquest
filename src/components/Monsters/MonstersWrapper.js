@@ -1,6 +1,7 @@
 import React from 'react';
 import MonsterList from './MonsterList';
 import MonsterCard from './MonsterCard';
+import API from '../API';
 
 class MonstersWrapper extends React.Component {
   state = {
@@ -8,11 +9,18 @@ class MonstersWrapper extends React.Component {
     selectedMonsterSlug: ''
   };
 
+  componentDidMount = () => {
+    API.fetchMonsters().then(res => {
+      this.setState({ monsterList: [...res] });
+    });
+  };
+
   render() {
+    const { monsterList } = this.state;
     return (
       <section className="monsters">
-        <MonsterList />
         <MonsterCard />
+        <MonsterList monsters={monsterList} />
       </section>
     );
   }
