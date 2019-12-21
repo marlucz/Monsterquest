@@ -9,7 +9,7 @@ const HeroWrapper = ({ clickBtn, images: { seledin, pinky, yellow } }) => {
   return (
     <CSSTransition
       in={showHero}
-      timeout={3000}
+      timeout={2000}
       classNames="faded"
       onExited={clickBtn}
     >

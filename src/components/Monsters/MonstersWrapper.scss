@@ -1,8 +1,14 @@
-.header {
-  animation: fadeIn 1s ease-in forwards;
-  position: absolute;
-  top: 50vh;
-  left: 50%;
+@import '../../variables.scss';
+
+.monsters-wrapper {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid $color-secondary;
+  border-radius: 2rem;
+  animation: fadeIn 2s ease-in forwards;
 }
 
 @keyframes fadeIn {

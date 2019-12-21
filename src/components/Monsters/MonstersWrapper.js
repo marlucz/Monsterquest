@@ -2,6 +2,7 @@ import React from 'react';
 import MonsterList from './MonsterList';
 import MonsterCard from './MonsterCard';
 import API from '../API';
+import './MonstersWrapper.scss';
 
 class MonstersWrapper extends React.Component {
   state = {

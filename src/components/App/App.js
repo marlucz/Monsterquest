@@ -6,7 +6,7 @@ import './App.scss';
 
 class App extends React.Component {
   state = {
-    isHeroVisible: false
+    isHeroVisible: true
   };
 
   handleClickBtn = () => {
@@ -17,7 +17,7 @@ class App extends React.Component {
     const { isHeroVisible } = this.state;
 
     return (
-      <div className="app">
+      <div className={isHeroVisible ? 'app' : 'app app--center-content'}>
         {isHeroVisible ? (
           <HeroWrapper images={images} clickBtn={this.handleClickBtn} />
         ) : (
