@@ -1,17 +1,22 @@
 import React from 'react';
+import './MonsterList.scss';
 
 const MonsterList = ({ fetchMonster, monsters }) => (
   <>
     {monsters.length ? (
-      <ul className="monsters__list">
+      <ul className="monsters-list">
         {monsters.map(monster => (
           <li
             key={monster.slug}
-            className="monsters__item"
+            className="monsters-list__item"
             onClick={() => fetchMonster(monster.slug)}
           >
-            <img src={monster.images.thumb} alt={monster.name} />
-            <h2 className="monsters__name">{monster.name}</h2>
+            <img
+              className="monsters-list__item__image"
+              src={monster.images.thumb}
+              alt={monster.name}
+            />
+            <h2 className="monsters-list__item__name">{monster.name}</h2>
           </li>
         ))}
       </ul>

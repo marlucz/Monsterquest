@@ -1,13 +1,15 @@
 @import '../../variables.scss';
 
 .monsters-wrapper {
-  width: 90vw;
-  height: 90vh;
-  display: flex;
+  width: 95vw;
+  height: 95vh;
+  display: grid;
+  grid-template-rows: 1fr minmax(min-content, 35%);
   justify-content: center;
-  align-items: center;
+  align-content: center;
   border: 5px solid $color-secondary;
   border-radius: 2rem;
+  padding: 1rem;
   animation: fadeIn 2s ease-in forwards;
 }
 
