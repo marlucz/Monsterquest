@@ -1,0 +1,9 @@
+const bgcImgs = [
+  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3c938f85-f834-4bb3-b3b2-97d295769464/d637xau-5852a726-5ca8-44f4-9cbf-684b12b823b9.png',
+  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/176622e8-bf4c-4d60-9a64-b75cff245c16/d6ada67-356f47fc-c8fe-49b7-b59a-313219d7022c.png',
+  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f144fa15-4001-4f05-83d9-73ad837f6bc4/d4wcj31-53a8338d-c2b1-4a00-ad15-aaa314cb9f6b.png',
+  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3c938f85-f834-4bb3-b3b2-97d295769464/d4rvb1n-161d659a-0761-4512-b490-e435f688e97b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjOTM4Zjg1LWY4MzQtNGJiMy1iM2IyLTk3ZDI5NTc2OTQ2NFwvZDRydmIxbi0xNjFkNjU5YS0wNzYxLTQ1MTItYjQ5MC1lNDM1ZjY4OGU5N2IucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Qe93MditmGsTn0q-gVmjinNIXOlbc4bI-w3TjMPjp3I',
+  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/30751457-a50b-4f4c-a9f2-5a8ee5504f89/d6awd3c-adacce12-6609-4e91-847a-5b08224c8b28.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzMwNzUxNDU3LWE1MGItNGY0Yy1hOWYyLTVhOGVlNTUwNGY4OVwvZDZhd2QzYy1hZGFjY2UxMi02NjA5LTRlOTEtODQ3YS01YjA4MjI0YzhiMjgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.K9V6MNCfqsQmL6oBbB0bMh595dzUDEEQ1uoDCEJwHe4'
+];
+
+export default bgcImgs;

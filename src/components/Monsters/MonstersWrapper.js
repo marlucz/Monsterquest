@@ -19,7 +19,6 @@ class MonstersWrapper extends React.Component {
   getMonster = monsterSlug => {
     API.fetchMonster(monsterSlug).then(res => {
       this.setState({ selectedMonster: res.data });
-      console.log(this.state.selectedMonster);
     });
   };
 
@@ -28,7 +27,11 @@ class MonstersWrapper extends React.Component {
     return (
       <section className="monsters-wrapper">
         <MonsterCard monster={selectedMonster} />
-        <MonsterList monsters={monsterList} fetchMonster={this.getMonster} />
+        <MonsterList
+          monsters={monsterList}
+          fetchMonster={this.getMonster}
+          selected={selectedMonster}
+        />
       </section>
     );
   }

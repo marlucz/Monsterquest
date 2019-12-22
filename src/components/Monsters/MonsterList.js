@@ -1,14 +1,18 @@
 import React from 'react';
 import './MonsterList.scss';
 
-const MonsterList = ({ fetchMonster, monsters }) => (
+const MonsterList = ({ selected, fetchMonster, monsters }) => (
   <>
     {monsters.length ? (
       <ul className="monsters-list">
         {monsters.map(monster => (
           <li
             key={monster.slug}
-            className="monsters-list__item"
+            className={
+              selected.name === monster.name
+                ? 'monsters-list__item monsters-list__item--active'
+                : 'monsters-list__item'
+            }
             onClick={() => fetchMonster(monster.slug)}
           >
             <img

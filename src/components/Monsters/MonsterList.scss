@@ -7,6 +7,7 @@
   align-items: center;
   align-content: space-between;
   width: 100%;
+  padding: 5px 0;
 
   &__item {
     height: 50%;
@@ -18,25 +19,23 @@
     align-items: center;
     background-color: $color-light;
     border-radius: 1rem;
-    padding: 5px;
+    padding: 1rem;
     margin-bottom: 5px;
     overflow: hidden;
     transition: transform 0.25s;
 
-    &:hover {
-      transform: skew(2deg, 2deg);
+    &--active {
+      box-shadow: inset 0 0 0 2px #ffe50a;
     }
 
     &__image {
       display: block;
-      max-height: 80;
-      max-width: 80%;
+      max-width: 70%;
     }
 
     &__name {
       font-size: 1.3rem;
       text-align: center;
-      padding: 0.5rem;
 
       @media (min-width: 768px) {
         font-size: 1.6rem;
