@@ -6,7 +6,7 @@ import './App.scss';
 
 class App extends React.Component {
   state = {
-    isHeroVisible: false
+    isHeroVisible: true
   };
 
   handleClickBtn = () => {

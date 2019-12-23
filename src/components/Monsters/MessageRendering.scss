@@ -8,6 +8,10 @@
 
   &__text {
     font-size: 2rem;
+
+    @media (min-width: 1024px) and (orientation: landscape) {
+      font-size: 3rem;
+    }
   }
 
   &__image {

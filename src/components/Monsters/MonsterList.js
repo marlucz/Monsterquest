@@ -18,7 +18,7 @@ const MonsterList = ({ selected, fetchMonster, monsters }) => {
             >
               <img
                 className="monsters-list__item__image"
-                src={monster.images.thumb}
+                src={monster.images.big}
                 alt={monster.name}
               />
               <h2 className="monsters-list__item__name">{monster.name}</h2>

@@ -24,7 +24,8 @@ const MonsterCard = ({
         <div
           className="monster-card"
           style={{
-            backgroundImage: `url(${getRandomBgcUrl(bgcImgs)})`
+            backgroundImage: `url(${getRandomBgcUrl(bgcImgs)})`,
+            backgroundSize: 'cover'
           }}
         >
           <h2 className="monster-card__name">{name}</h2>

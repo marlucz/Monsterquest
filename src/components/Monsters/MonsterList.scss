@@ -9,13 +9,22 @@
   width: 100%;
   padding: 5px 0;
 
+  @media (min-width: 768px) {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+
+  @media (min-width: 1024px) and (orientation: landscape) {
+    order: -1;
+    padding: 0;
+  }
+
   &__item {
     height: 50%;
     flex-basis: 32%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-content: space-between;
     align-items: center;
     background-color: $color-light;
     border-radius: 1rem;
@@ -24,13 +33,24 @@
     overflow: hidden;
     transition: transform 0.25s;
 
+    @media (min-width: 1024px) and (orientation: landscape) {
+      flex-basis: 48%;
+      max-height: 30%;
+      margin-bottom: 0;
+      padding: 1.5rem;
+    }
+
     &--active {
-      box-shadow: inset 0 0 0 2px #ffe50a;
+      border: 2px solid #ffe50a;
+
+      @media (min-width: 1024px) {
+        border: 5px solid #ffe50a;
+      }
     }
 
     &__image {
       display: block;
-      max-width: 70%;
+      width: 70%;
     }
 
     &__name {
