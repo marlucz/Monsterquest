@@ -1,6 +1,7 @@
 import React from 'react';
-import './MonsterCard.scss';
 import bgcImgs from '../../data/pokebackgroundImages';
+import './MonsterCard.scss';
+import './MessageRendering.scss';
 
 const MonsterCard = ({
   monster: { name, description, statistics, images }
@@ -15,6 +16,7 @@ const MonsterCard = ({
   const getRandomBgcUrl = array => {
     return array[Math.floor(Math.random() * array.length)];
   };
+  const message = `No monster selected`;
 
   return (
     <>
@@ -60,7 +62,14 @@ const MonsterCard = ({
           <p className="monster-card__description">{description}</p>
         </div>
       ) : (
-        <h1 className="monster-card__no-monster">No monster selected</h1>
+        <div className="message">
+          <h2 className="message__text">{message}</h2>
+          <img
+            className="message__image"
+            src="https://miro.medium.com/max/796/1*Jj7zXRWMuSW7P0ttFHJtZQ.gif"
+            alt="monster gif"
+          />
+        </div>
       )}
     </>
   );
