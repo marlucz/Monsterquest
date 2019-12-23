@@ -2,22 +2,22 @@ import { URL } from '../data/config';
 
 const API = {
   fetchMonsters: async () => {
-    try {
-      const monsters = await fetch(`${URL}/monsters`).then(res => res.json());
+    const response = await fetch(`${URL}/monsters`);
+    if (response.ok && response.status >= 200 && response.status <= 299) {
+      const monsters = await response.json();
       return monsters.data;
-    } catch (err) {
-      return new Error(err);
+    } else {
+      return Error(response.statusText);
     }
   },
 
   fetchMonster: async slug => {
-    try {
-      const monster = await fetch(`${URL}/monster/${slug}`).then(res =>
-        res.json()
-      );
-      return monster;
-    } catch (err) {
-      return new Error(err);
+    const response = await fetch(`${URL}/monster/${slug}`);
+    if (response.ok && response.status >= 200 && response.status <= 299) {
+      const monster = await response.json();
+      return monster.data;
+    } else {
+      return Error(response.statusText);
     }
   }
 };

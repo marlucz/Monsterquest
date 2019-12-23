@@ -1,4 +1,5 @@
 import React from 'react';
+import MessageHandler from '../MessageHandler/MessageHandler';
 import './MonsterList.scss';
 
 const MonsterList = ({ selected, fetchMonster, monsters }) => {
@@ -26,11 +27,11 @@ const MonsterList = ({ selected, fetchMonster, monsters }) => {
           ))}
         </ul>
       ) : (
-        <h2 style={{ textAlign: 'center' }}>
-          What you are looking for is either downloaded by the server, trying to
-          be displayed on the site ... or has been destroyed by our little
-          monsters :(
-        </h2>
+        <MessageHandler>
+          What you are looking for is either being downloaded from the server,
+          trying to be displayed on the site ... or has been destroyed by our
+          little monsters :(
+        </MessageHandler>
       )}
     </>
   );
