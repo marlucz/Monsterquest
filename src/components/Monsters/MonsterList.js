@@ -17,11 +17,9 @@ const MonsterList = ({ selected, fetchMonster, monsters }) => {
               }
               onClick={() => fetchMonster(monster.slug)}
             >
-              <img
-                className="monsters-list__item__image"
-                src={monster.images.big}
-                alt={monster.name}
-              />
+              <div className="monsters-list__item__image">
+                <img src={monster.images.big} alt={monster.name} />
+              </div>
               <h2 className="monsters-list__item__name">{monster.name}</h2>
             </li>
           ))}

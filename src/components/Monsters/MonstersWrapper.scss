@@ -2,6 +2,7 @@
 
 .monsters-wrapper {
   width: 95vw;
+  max-width: 1200px;
   height: 95vh;
   display: grid;
   grid-template-rows: 70% 30%;
@@ -12,13 +13,13 @@
   padding: 1rem;
   animation: fadeIn 2s ease-in forwards;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (orientation: portrait) {
     grid-template-rows: 60% 40%;
   }
 
-  @media (min-width: 1024px) and (orientation: landscape) {
-    grid-template-rows: 1fr;
-    grid-template-columns: 40% 60%;
+  @media (orientation: landscape) {
+    grid-template-rows: 100%;
+    grid-template-columns: 45% 55%;
     padding: 1.5rem;
   }
 }
