@@ -23,11 +23,12 @@ You will also see any lint errors in the console.
 - Refactor to React,
 - components functionality,
 - styles checked on browsterstack and physical devices,
+- change Stateful Components into Functional Components with Hooks
 
 ## What I've learned
 
 - React!,
-- that state management and conditional rendering techniques,
+- state management and conditional rendering techniques,
 - git --amend ftw,
 - not to be afraid of changing technology that I already know for the purposes of learning new things
 
