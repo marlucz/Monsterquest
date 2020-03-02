@@ -6,6 +6,11 @@ import './HeroWrapper.scss';
 
 const HeroWrapper = ({ clickBtn, images: { seledin, pinky, yellow } }) => {
   const [showHero, setShowHero] = useState(true);
+
+  const handleClick = () => {
+    setShowHero(false);
+  };
+
   return (
     <CSSTransition
       in={showHero}
@@ -22,10 +27,7 @@ const HeroWrapper = ({ clickBtn, images: { seledin, pinky, yellow } }) => {
             <span>To catch them all is my real test,</span>
             <span>To handle is my cause...</span>
           </p>
-          <button
-            onClick={() => setShowHero(false)}
-            className="btn btn--bottom"
-          >
+          <button onClick={handleClick} className="btn btn--bottom">
             Gotta fetch 'em all!
           </button>
         </header>

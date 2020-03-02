@@ -6,7 +6,7 @@ const HeroImage = ({ color, src }) => (
   <img
     className={`hero__image hero__image--${color}`}
     src={src}
-    alt={color + ' monster popping up from the corner of the screen'}
+    alt={`${color} monster popping up from the corner of the screen`}
   />
 );
 
