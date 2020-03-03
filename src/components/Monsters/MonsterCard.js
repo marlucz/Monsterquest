@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MessageHandler from '../MessageHandler/MessageHandler';
 import bgcImgs from '../../globals/pokebackgroundImages';
 import './MonsterCard.scss';
 
-const MonsterCard = ({
-  monster: { name, description, statistics, images }
-}) => {
+import { MonstersContext } from '../../context/MonstersContext';
+
+const MonsterCard = () => {
+  const {
+    selectedMonster: { name, description, statistics, images }
+  } = useContext(MonstersContext);
+
   const powerBar = statistics ? statistics.power : '';
   const frequencyBar = statistics ? statistics.frequency : '';
   const dangerBar = statistics ? statistics.danger : '';

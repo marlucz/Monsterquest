@@ -31,7 +31,7 @@ const MonstersWrapper = () => {
         </MessageHandler>
       ) : (
         <section className="monsters-wrapper">
-          <MonsterCard monster={selectedMonster} />
+          <MonsterCard />
           <MonsterList
             monsters={monsterList}
             fetchMonster={getMonster}
