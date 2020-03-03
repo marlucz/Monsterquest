@@ -8,13 +8,7 @@ import { MonstersContext } from '../../context/MonstersContext';
 import './MonstersWrapper.scss';
 
 const MonstersWrapper = () => {
-  const {
-    monsterList,
-    selectedMonster,
-    isError,
-    getMonsters,
-    getMonster
-  } = useContext(MonstersContext);
+  const { isError, getMonsters } = useContext(MonstersContext);
 
   useEffect(() => {
     getMonsters();
@@ -32,11 +26,7 @@ const MonstersWrapper = () => {
       ) : (
         <section className="monsters-wrapper">
           <MonsterCard />
-          <MonsterList
-            monsters={monsterList}
-            fetchMonster={getMonster}
-            selected={selectedMonster}
-          />
+          <MonsterList />
         </section>
       )}
     </>

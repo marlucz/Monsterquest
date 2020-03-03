@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MessageHandler from '../MessageHandler/MessageHandler';
 import './MonsterList.scss';
 
-const MonsterList = ({ selected, fetchMonster, monsters }) => {
+import { MonstersContext } from '../../context/MonstersContext';
+
+const MonsterList = () => {
+  const { selectedMonster, getMonster, monsterList } = useContext(
+    MonstersContext
+  );
+
   return (
     <>
-      {monsters.length ? (
+      {monsterList.length ? (
         <ul className="monsters-list">
-          {monsters.map(monster => (
+          {monsterList.map(monster => (
             <li
               key={monster.slug}
               className={
-                selected.name === monster.name
+                selectedMonster.name === monster.name
                   ? 'monsters-list__item monsters-list__item--active'
                   : 'monsters-list__item'
               }
-              onClick={() => fetchMonster(monster.slug)}
+              onClick={() => getMonster(monster.slug)}
             >
               <div className="monsters-list__item__image">
                 <img src={monster.images.big} alt={monster.name} />
