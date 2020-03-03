@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import PropTypes from 'prop-types';
 import HeroImage from './HeroImage';
 import './HeroWrapper.scss';
+import { HeroContext } from '../../context/HeroContext';
 
-const HeroWrapper = ({ clickBtn, images: { seledin, pinky, yellow } }) => {
+const HeroWrapper = () => {
   const [showHero, setShowHero] = useState(true);
+
+  const {
+    handleHeroFadeOut,
+    images: { seledin, pinky, yellow }
+  } = useContext(HeroContext);
 
   const handleClick = () => {
     setShowHero(false);
@@ -16,7 +21,7 @@ const HeroWrapper = ({ clickBtn, images: { seledin, pinky, yellow } }) => {
       in={showHero}
       timeout={2000}
       classNames="faded"
-      onExited={clickBtn}
+      onExited={handleHeroFadeOut}
     >
       <section className="hero">
         <header className="hero__header">
@@ -39,11 +44,6 @@ const HeroWrapper = ({ clickBtn, images: { seledin, pinky, yellow } }) => {
       </section>
     </CSSTransition>
   );
-};
-
-HeroWrapper.propTypes = {
-  clickBtn: PropTypes.func.isRequired,
-  images: PropTypes.objectOf(PropTypes.string).isRequired
 };
 
 export default HeroWrapper;

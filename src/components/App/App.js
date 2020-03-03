@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import HeroWrapper from '../Hero/HeroWrapper';
 import MonstersWrapper from '../Monsters/MonstersWrapper';
-import { images } from '../../globals/heroImages';
 
 import MonstersProvider from '../../context/MonstersContext';
+import { HeroContext } from '../../context/HeroContext';
 
 import './App.scss';
 
 const App = () => {
-  const [heroVisibility, setHeroVisibility] = useState(true);
-
-  const handleClickBtn = () => {
-    setHeroVisibility(false);
-  };
+  const { heroVisibility } = useContext(HeroContext);
 
   return (
     <div className={heroVisibility ? 'app' : 'app app--center-content'}>
       {heroVisibility ? (
-        <HeroWrapper images={images} clickBtn={handleClickBtn} />
+        <HeroWrapper />
       ) : (
         <MonstersProvider>
           <MonstersWrapper />

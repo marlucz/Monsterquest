@@ -7,13 +7,13 @@ export const HeroContext = React.createContext();
 const HeroProvider = ({ children }) => {
   const [heroVisibility, setHeroVisibility] = useState(true);
 
-  const handleClickBtn = () => {
+  const handleHeroFadeOut = () => {
     setHeroVisibility(false);
   };
 
   return (
     <HeroContext.Provider
-      value={{ images: images, heroVisibility, handleClickBtn }}
+      value={{ images: images, heroVisibility, handleHeroFadeOut }}
     >
       {children}
     </HeroContext.Provider>
