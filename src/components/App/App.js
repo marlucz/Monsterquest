@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import HeroWrapper from '../Hero/HeroWrapper';
 import MonstersWrapper from '../Monsters/MonstersWrapper';
-import { images } from '../../data/heroImages';
+import { images } from '../../globals/heroImages';
+
+import MonstersProvider from '../../context/MonstersContext';
+
 import './App.scss';
 
 const App = () => {
@@ -16,7 +19,9 @@ const App = () => {
       {heroVisibility ? (
         <HeroWrapper images={images} clickBtn={handleClickBtn} />
       ) : (
-        <MonstersWrapper />
+        <MonstersProvider>
+          <MonstersWrapper />
+        </MonstersProvider>
       )}
     </div>
   );

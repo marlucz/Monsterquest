@@ -1,6 +1,6 @@
 import React from 'react';
 import MessageHandler from '../MessageHandler/MessageHandler';
-import bgcImgs from '../../data/pokebackgroundImages';
+import bgcImgs from '../../globals/pokebackgroundImages';
 import './MonsterCard.scss';
 
 const MonsterCard = ({

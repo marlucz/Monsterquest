@@ -1,4 +1,4 @@
-import { URL } from '../data/config';
+import { URL } from './config';
 
 const API = {
   fetchMonsters: async () => {

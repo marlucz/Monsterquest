@@ -1,42 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import MonsterList from './MonsterList';
 import MonsterCard from './MonsterCard';
 import MessageHandler from '../MessageHandler/MessageHandler';
-import API from '../API';
+
+import { MonstersContext } from '../../context/MonstersContext';
+
 import './MonstersWrapper.scss';
 
 const MonstersWrapper = () => {
-  const [monsterList, setMonsterList] = useState([]);
-  const [selectedMonster, setSelectedMonster] = useState({});
-  const [isError, setError] = useState(false);
+  const {
+    monsterList,
+    selectedMonster,
+    isError,
+    getMonsters,
+    getMonster
+  } = useContext(MonstersContext);
 
   useEffect(() => {
-    API.fetchMonsters().then(res => {
-      try {
-        if (!(res instanceof Error)) {
-          setMonsterList([...res]);
-        } else {
-          throw Error(res.message);
-        }
-      } catch (err) {
-        setError(true);
-      }
-    });
+    getMonsters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const getMonster = monsterSlug => {
-    API.fetchMonster(monsterSlug).then(res => {
-      try {
-        if (!(res instanceof Error)) {
-          setSelectedMonster(res);
-        } else {
-          throw Error(res.message);
-        }
-      } catch (err) {
-        setError(true);
-      }
-    });
-  };
 
   return (
     <>
