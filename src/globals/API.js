@@ -1,4 +1,4 @@
-import { URL } from './config';
+const URL = 'http://localhost:8080/api/v1';
 
 const API = {
   fetchMonsters: async () => {

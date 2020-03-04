@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.app {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  background-image: radial-gradient(
+    circle at top right,
+    $color-light,
+    $color-gradient
+  );
+
+  @media (min-width: 1024px) and (orientation: landscape) {
+    padding: 3rem;
+  }
+}
+
+.appCenter {
+  @extend .app;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

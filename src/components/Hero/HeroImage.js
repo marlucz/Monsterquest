@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './HeroImage.scss';
+
+import styles from './HeroImage.module.scss';
 
 const HeroImage = ({ color, src }) => (
   <img
-    className={`hero__image hero__image--${color}`}
+    className={styles[color]}
     src={src}
     alt={`${color} monster popping up from the corner of the screen`}
   />

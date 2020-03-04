@@ -23,7 +23,8 @@ You will also see any lint errors in the console.
 - Refactor to React,
 - components functionality,
 - styles checked on browsterstack and physical devices,
-- change Stateful Components into Functional Components with Hooks
+- change Stateful Components into Functional Components with Hooks,
+- refactor application to use Context instead of passing props, might be a little overkill though... but it is for learning purposes'
 
 ## What I've learned
 

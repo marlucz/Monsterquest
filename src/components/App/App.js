@@ -5,13 +5,13 @@ import MonstersWrapper from '../Monsters/MonstersWrapper';
 import MonstersProvider from '../../context/MonstersContext';
 import { HeroContext } from '../../context/HeroContext';
 
-import './App.scss';
+import styles from './App.module.scss'
 
 const App = () => {
   const { heroVisibility } = useContext(HeroContext);
 
   return (
-    <div className={heroVisibility ? 'app' : 'app app--center-content'}>
+    <div className={heroVisibility ? styles.app : styles.appCenter}>
       {heroVisibility ? (
         <HeroWrapper />
       ) : (
