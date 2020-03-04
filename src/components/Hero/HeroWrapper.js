@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import HeroImage from './HeroImage';
 import { HeroContext } from '../../context/HeroContext';
 
-import styles from './HeroWrapper.module.scss'
+import styles from './HeroWrapper.module.scss';
 
 const HeroWrapper = () => {
   const [showHero, setShowHero] = useState(true);
@@ -18,13 +18,8 @@ const HeroWrapper = () => {
   };
 
   return (
-    <CSSTransition
-      in={showHero}
-      timeout={2000}
-      classNames="faded"
-      onExited={handleHeroFadeOut}
-    >
-      <section>
+    <CSSTransition in={showHero} timeout={2000} onExited={handleHeroFadeOut}>
+      <section className={showHero ? '' : styles.exitActive}>
         <header className={styles.header}>
           <h1 className={styles.heading}>Monsterquest</h1>
           <p className={styles.subtext}>

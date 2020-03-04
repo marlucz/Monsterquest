@@ -1,0 +1,81 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  width: 100%;
+  padding: 5px 0;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+
+  @media (orientation: landscape) {
+    order: -1;
+    padding: 0;
+    align-content: space-between;
+  }
+}
+
+.listItem {
+  height: 50%;
+  flex-basis: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-light;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 5px;
+  overflow: hidden;
+  transition: transform 0.25s;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (orientation: landscape) and (min-width: 1024px) {
+    flex-basis: 48%;
+    max-height: 30%;
+    margin-bottom: 0;
+  }
+
+  &Active {
+    @extend .listItem;
+
+    border: 2px solid #ffe50a;
+
+    @media (min-width: 1024px) {
+      border: 5px solid #ffe50a;
+    }
+  }
+}
+
+.image {
+  width: 70%;
+  max-height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    display: block;
+    width: 90%;
+  }
+}
+
+.name {
+  font-size: 1.3rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+  }
+}

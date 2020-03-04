@@ -5,7 +5,7 @@ import MessageHandler from '../MessageHandler/MessageHandler';
 
 import { MonstersContext } from '../../context/MonstersContext';
 
-import './MonstersWrapper.scss';
+import styles from './MonstersWrapper.module.scss';
 
 const MonstersWrapper = () => {
   const { isError, getMonsters } = useContext(MonstersContext);
@@ -24,7 +24,7 @@ const MonstersWrapper = () => {
           little monsters :(
         </MessageHandler>
       ) : (
-        <section className="monsters-wrapper">
+        <section className={styles.wrapper}>
           <MonsterCard />
           <MonsterList />
         </section>
