@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import MessageHandler from '../MessageHandler/MessageHandler';
 import bgcImgs from '../../globals/pokebackgroundImages';
-import './MonsterCard.scss';
 
 import { MonstersContext } from '../../context/MonstersContext';
+
+import styles from './MonsterCard.module.scss';
 
 const MonsterCard = () => {
   const {
@@ -25,18 +26,18 @@ const MonsterCard = () => {
     <>
       {name ? (
         <div
-          className="monster-card"
+          className={styles.wrapper}
           style={{
             backgroundImage: `url(${getRandomBgcUrl(bgcImgs)})`,
             backgroundSize: 'cover'
           }}
         >
-          <h2 className="monster-card__name">{name}</h2>
-          <div className="monster-card__image">
+          <h2 className={styles.name}>{name}</h2>
+          <div className={styles.image}>
             <img src={images.big} alt={name} />
           </div>
-          <ul className="monster-card__stats-list">
-            <li className="monster-card__stats">
+          <ul className={styles.stats}>
+            <li className={styles.statsItem}>
               <label htmlFor="powerBar">Power: {roundStat(powerBar)}%</label>
               <progress
                 id="powerBar"
@@ -44,7 +45,7 @@ const MonsterCard = () => {
                 value={roundStat(powerBar)}
               ></progress>
             </li>
-            <li className="monster-card__stats">
+            <li className={styles.statsItem}>
               <label htmlFor="frequencyBar">
                 Frequency: {roundStat(frequencyBar)}%
               </label>
@@ -54,7 +55,7 @@ const MonsterCard = () => {
                 value={roundStat(frequencyBar)}
               ></progress>
             </li>
-            <li className="monster-card__stats">
+            <li className={styles.statsItem}>
               <label htmlFor="dangerBar">Danger: {roundStat(dangerBar)}%</label>
               <progress
                 id="dangerBar"
@@ -63,7 +64,7 @@ const MonsterCard = () => {
               ></progress>
             </li>
           </ul>
-          <p className="monster-card__description">{description}</p>
+          <p className={styles.description}>{description}</p>
         </div>
       ) : (
         <>

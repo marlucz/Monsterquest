@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './MessageHandler.scss';
+
+import styles from './MessageHandler.module.scss';
 
 const MessageHandler = ({ children, image, src, alt }) => {
   return (
-    <div className="message">
-      <h2 className="message__text">{children}</h2>
-      {image ? <img className="message__image" src={src} alt={alt} /> : ''}
+    <div className={styles.message}>
+      <h2 className={styles.messageText}>{children}</h2>
+      {image ? <img className={styles.messageImage} src={src} alt={alt} /> : ''}
     </div>
   );
 };
