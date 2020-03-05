@@ -1,6 +1,6 @@
 # Monsterquest
 
-Frontend application for recruitment purposes based on Monsters REST API
+Application for react training purposes based on Monsters REST API
 
 ## Server and Original API
 

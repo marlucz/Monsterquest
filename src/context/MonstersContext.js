@@ -24,17 +24,26 @@ const MonstersProvider = ({ children }) => {
   };
 
   const getMonster = monsterSlug => {
-    API.fetchMonster(monsterSlug).then(res => {
-      try {
-        if (!(res instanceof Error)) {
-          setSelectedMonster(res);
-        } else {
-          throw Error(res.message);
+    if (
+      selectedMonster.name &&
+      monsterSlug === selectedMonster.name.toLowerCase()
+    ) {
+      console.log('memoized');
+      return;
+    } else {
+      console.log(monsterSlug, selectedMonster.name);
+      API.fetchMonster(monsterSlug).then(res => {
+        try {
+          if (!(res instanceof Error)) {
+            setSelectedMonster(res);
+          } else {
+            throw Error(res.message);
+          }
+        } catch (err) {
+          setError(true);
         }
-      } catch (err) {
-        setError(true);
-      }
-    });
+      });
+    }
   };
 
   return (
