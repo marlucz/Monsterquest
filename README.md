@@ -6,6 +6,10 @@ Application for react training purposes based on Monsters REST API
 
 [API's github](https://github.com/codequest-eu/monsters-api)
 
+## 
+
+Open [LIVE](https://floating-wildwood-77854.herokuapp.com/)  - first open can take a while, so please keep calm. 
+
 ## Usage
 
 In the project directory, you can run:
