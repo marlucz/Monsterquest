@@ -11,6 +11,9 @@ const HeroImage = ({ color, src }) => (
   />
 );
 
-PropTypes.objectOf(PropTypes.string);
+HeroImage.propTypes = {
+  color: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired
+};
 
 export default HeroImage;

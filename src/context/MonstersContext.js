@@ -10,7 +10,7 @@ const MonstersProvider = ({ children }) => {
   const [isError, setError] = useState(false);
 
   const getMonsters = () => {
-    API.fetchMonsters().then(res => {
+    API.fetchMonsters().then((res) => {
       try {
         if (!(res instanceof Error)) {
           setMonsterList([...res]);
@@ -23,16 +23,15 @@ const MonstersProvider = ({ children }) => {
     });
   };
 
-  const getMonster = monsterSlug => {
+  const getMonster = (monsterSlug) => {
     if (
       selectedMonster.name &&
       monsterSlug === selectedMonster.name.toLowerCase()
     ) {
-      console.log('memoized');
       return;
     } else {
       console.log(monsterSlug, selectedMonster.name);
-      API.fetchMonster(monsterSlug).then(res => {
+      API.fetchMonster(monsterSlug).then((res) => {
         try {
           if (!(res instanceof Error)) {
             setSelectedMonster(res);
@@ -53,7 +52,7 @@ const MonstersProvider = ({ children }) => {
         selectedMonster,
         isError,
         getMonsters,
-        getMonster
+        getMonster,
       }}
     >
       {children}
