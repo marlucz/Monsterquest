@@ -2,23 +2,15 @@ const URL = 'http://localhost:8080/api/v1';
 
 const API = {
   fetchMonsters: async () => {
-    const response = await fetch(`${URL}/monsters`);
-    if (response.ok && response.status >= 200 && response.status <= 299) {
-      const monsters = await response.json();
-      return monsters.data;
-    } else {
-      return Error(response.statusText);
-    }
+    const res = await fetch(`${URL}/monsters`);
+    if (!res.ok) throw new Error(res.statusText);
+    return res.json();
   },
 
   fetchMonster: async slug => {
-    const response = await fetch(`${URL}/monster/${slug}`);
-    if (response.ok && response.status >= 200 && response.status <= 299) {
-      const monster = await response.json();
-      return monster.data;
-    } else {
-      return Error(response.statusText);
-    }
+    const res = await fetch(`${URL}/monster/${slug}`);
+    if (!res.ok) throw new Error(res.statusText);
+    return res.json();
   }
 };
 

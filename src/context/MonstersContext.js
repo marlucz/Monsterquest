@@ -10,38 +10,21 @@ const MonstersProvider = ({ children }) => {
   const [isError, setError] = useState(false);
 
   const getMonsters = () => {
-    API.fetchMonsters().then((res) => {
-      try {
-        if (!(res instanceof Error)) {
-          setMonsterList([...res]);
-        } else {
-          throw Error(res.message);
-        }
-      } catch (err) {
-        setError(true);
-      }
-    });
+    API.fetchMonsters()
+      .then(res => setMonsterList([...res.data]))
+      .catch(err => setError(err));
   };
 
-  const getMonster = (monsterSlug) => {
+  const getMonster = monsterSlug => {
     if (
       selectedMonster.name &&
       monsterSlug === selectedMonster.name.toLowerCase()
     ) {
       return;
     } else {
-      console.log(monsterSlug, selectedMonster.name);
-      API.fetchMonster(monsterSlug).then((res) => {
-        try {
-          if (!(res instanceof Error)) {
-            setSelectedMonster(res);
-          } else {
-            throw Error(res.message);
-          }
-        } catch (err) {
-          setError(true);
-        }
-      });
+      API.fetchMonster(monsterSlug)
+        .then(res => setSelectedMonster(res.data))
+        .catch(err => setError(err));
     }
   };
 
@@ -52,7 +35,7 @@ const MonstersProvider = ({ children }) => {
         selectedMonster,
         isError,
         getMonsters,
-        getMonster,
+        getMonster
       }}
     >
       {children}
